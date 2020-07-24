@@ -75,6 +75,7 @@ img {
     max-width: 800px;
     padding: 10px;
     margin: 0 auto;
+    align-items: center;
 }
 
 .grid1 div:nth-child(n + 4) {
@@ -136,4 +137,40 @@ img {
         flex: 1 0 200px;
         margin: 0 10px;
     }
+}
+
+/*grid 3*/
+
+.grid3 {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 0 auto;
+    max-width: 800px;
+    padding: 10px;
+}
+
+.grid3-item:nth-child(1) {
+    grid-row: 1 / 3;
+}
+
+.grid3-item{
+    display: grid;
+}
+
+.grid3-item img {
+    grid-column: 1;
+    grid-row: 1 / 3;
+    align-self: end;
+}
+
+.grid3-item p {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 10px;
+    color: #fff;
+    grid-column: 1;
+    grid-row: 2;
+
+    /*alinhar ao fim da imagem quando se tornar responsivo*/
+    align-self: end;
 }
