@@ -6,12 +6,12 @@ const HEADER = styled.header`
     padding: 50px 30px;
     background-image: linear-gradient(to right, #201b1c,  #423e3d);
     color: #fff;
-    font-family: 'Times New Roman', Times, serif;  
+    //font-family: 'Times New Roman', Times, serif;  
     h2 {
-        font-size: 28px;
+        font-size: 32px;
     }
     p {
-        font-size: 19px;
+        font-size: 16px;
     }  
 
     @media( max-width: 769px){
