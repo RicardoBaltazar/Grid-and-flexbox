@@ -3,29 +3,29 @@ import styled from "styled-components"
 
 const HEADER = styled.header`
     width: 100%;
-    padding: 30px 200px;
+    padding: 50px 30px;
     background-image: linear-gradient(to right, #201b1c,  #423e3d);
     color: #fff;
     font-family: 'Times New Roman', Times, serif;  
     h2 {
-        font-size: 25px;
+        font-size: 28px;
     }
     p {
         font-size: 19px;
     }  
 
     @media( max-width: 769px){
-        padding: 30px 75px;
+        padding: 50px 30px;
     }
 
     @media( max-width: 426px){
-        padding: 30px 50px;
+        padding: 50px 30px;
 
         h2 {
-            font-size: 20px;
+            font-size: 26px;
         }
         p {
-            font-size: 16px;
+            font-size: 18px;
         }  
     }
 `;
