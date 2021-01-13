@@ -34,6 +34,10 @@ const CARDS = styled.div`
         border-top: 1px solid #ededed;
         padding: 8px 20px;
     }
+
+    @media(max-width: 426px){
+        width: 100%;
+    }
 `
 
 export default function Cards() {
