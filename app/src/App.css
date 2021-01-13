@@ -8,3 +8,15 @@
 body {
   font-family: 'Domine', serif;
 }
+
+main {
+  display: flex;
+  flex-direction: column;
+}
+
+section {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 30px;
+}

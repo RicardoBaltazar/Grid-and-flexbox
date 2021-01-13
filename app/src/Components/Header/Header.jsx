@@ -4,6 +4,7 @@ import styled from "styled-components"
 const HEADER = styled.header`
     width: 100%;
     padding: 50px 30px;
+    margin-bottom: 15px;
     background-image: linear-gradient(to right, #201b1c,  #423e3d);
     color: #fff;
     //font-family: 'Times New Roman', Times, serif;  
