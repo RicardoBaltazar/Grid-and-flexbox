@@ -21,7 +21,7 @@ const CARDS = styled.div`
         font-weight: 500;
     }
 
-    .card-card{
+    .card-text{
         padding: 20px 20px 0px 20px;
         display: flex;
         flex-direction: column;
@@ -41,17 +41,46 @@ const CARDS = styled.div`
 `
 
 export default function Cards() {
+
+    const card = [
+        {
+            title: "titutlo 1",
+            text: "texto 1",
+            footer: "footer 1"
+        }
+    ];
+
+
+
     return (
         <CARDS>
+            {card.map(function (card) {
+                return (
+                    <>
+                    <div className='card-title'>
+                        {card.title}
+                    </div>
+                    <div className='card-text'>
+                        {card.text}
+                    </div>
+                    <div className='card-footer'>
+                        {card.footer}
+                    </div>
+                    </>
+                )
+            })}
+            
+        </CARDS>
+    )
+    /*
             <div className='card-title'>
                 title
             </div>
-            <div className='card-card'>
+            <div className='card-text'>
                 card
             </div>
             <div className='card-footer'>
                 footer
             </div>
-        </CARDS>
-    )
+            */
 }
