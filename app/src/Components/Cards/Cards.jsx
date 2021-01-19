@@ -1,14 +1,20 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from "styled-components"
+import testes from "../../services/teste"
+import axios from 'axios'
+
+
 
 const CARDS = styled.div`
-    //border: 1px solid red;
     width: 300px;
+    min-width: 300px;
     height: 320px;
     margin: 20px 0;
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     text-decoration: inherit;
+    display: flex;
+    flex-direction: column;
     
     &:hover {
         cursor: pointer;
@@ -33,6 +39,14 @@ const CARDS = styled.div`
     .card-footer {
         border-top: 1px solid #ededed;
         padding: 8px 20px;
+        bottom: 0;
+    }
+
+    .card-footer span{
+        border: 1px blue solid;
+        padding: 5px;
+        border-radius: 4px;
+        font-size: 11px;
     }
 
     @media(max-width: 426px){
@@ -40,47 +54,67 @@ const CARDS = styled.div`
     }
 `
 
-export default function Cards() {
+export default class Cards extends Component {
 
-    const card = [
-        {
-            title: "titutlo 1",
-            text: "texto 1",
-            footer: "footer 1"
-        }
-    ];
+    state = {
+        datas: []
+      }
+    
+      componentDidMount() {
+        axios.get(`https://api.openbrewerydb.org/breweries`)
+          .then(res => {
+            const datas = res.data;
+            this.setState({ datas });
+            console.log(datas)
+          })
+      }
+
+    render() {
 
 
-
-    return (
-        <CARDS>
-            {card.map(function (card) {
-                return (
-                    <>
+        const cards = this.state.datas.map(data =>{
+            return (
+                <>
+                <CARDS>
                     <div className='card-title'>
-                        {card.title}
+                        {data.name}
                     </div>
+                    
                     <div className='card-text'>
-                        {card.text}
+                        <p>{data.street}</p>
+                        <p>{data.state} - {data.postal_code}</p>
+                        <p>{data.city}</p>
                     </div>
+
                     <div className='card-footer'>
-                        {card.footer}
+                        <span>{data.brewery_type}</span>
                     </div>
-                    </>
-                )
-            })}
-            
-        </CARDS>
-    )
+                </ CARDS>
+                </>
+            )
+        })
+
+        return (
+            <>
+                {cards}
+            </>
+        )
+    }
+
     /*
-            <div className='card-title'>
-                title
-            </div>
-            <div className='card-text'>
-                card
-            </div>
-            <div className='card-footer'>
-                footer
-            </div>
-            */
+    <div className='card-title'>
+                    {testes[0].title}
+                    {cards}
+                </div>
+                <div className='card-text'>
+                    {testes[0].text}
+                    {cards}
+
+                </div>
+                <div className='card-footer'>
+                    {testes[0].footer}
+                    {cards}
+                </div>
+                */
+
 }

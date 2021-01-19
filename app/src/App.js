@@ -13,9 +13,6 @@ function App() {
           <Filter />
           <section>
             <Cards />
-            <Cards />
-            <Cards />
-            <Cards />
           </section>
         </main>
         <Footer />
