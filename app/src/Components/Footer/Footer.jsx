@@ -7,6 +7,12 @@ const FOOTER = styled.footer`
     align-items: center;
     margin: 35px 0;
     color: #4a4a4a;
+
+    @media(max-width:426px){        
+        span{
+            margin-left:60px;
+        }
+    }
 `
 
 export default function Footer() {

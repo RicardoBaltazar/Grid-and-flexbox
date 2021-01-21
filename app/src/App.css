@@ -22,6 +22,11 @@ section {
   flex-wrap: wrap;
 }
 
+.section-pagination {
+  justify-content: center;
+  flex-wrap: nowrap;
+}
+
 @media(max-width: 426px){
   main {
     width: 100%;
@@ -30,5 +35,9 @@ section {
   section {
     flex-direction: column;
     width: 100%;
+  }
+
+  .section-pagination {
+    flex-direction: row;
   }
 }

@@ -1,5 +1,8 @@
-import React from 'react'
+import React, { Component } from 'react'
 import styled from "styled-components"
+import axios from 'axios'
+
+
 
 const FILTER = styled.div`
 
@@ -15,14 +18,42 @@ const FILTER = styled.div`
         color: #4a4a4a;
     }
 `
+export default class Filter extends Component {
 
-export default function Filter() {
-    return (
-        <FILTER>
-            <label htmlFor="">Filter:</label>
-            <select name="" id="">
-                <option>select...</option>
-            </select>
-        </FILTER>
-    )
+    state = {
+        datas: [],
+
+    }
+
+
+    componentDidMount() {
+        //axios.get(`https://api.openbrewerydb.org/breweries`)
+        axios.get(`https://api.openbrewerydb.org/breweries`)
+            .then(res => {
+                const datas = res.data;
+                this.setState({ datas });
+                console.log(datas)
+            })
+    }
+
+    render() {
+
+        const filter = this.state.datas.map(data => {
+            return (
+            <option  id={data.id} value={data.brewery_type}>
+                {data.brewery_type}
+            </option>
+            )
+        })
+
+        return (
+            <FILTER>
+                <label htmlFor="">Filter:</label>
+                <select name="" id="">
+                    <option id='0' value=''>select...</option>
+                    {filter}
+                </select>
+            </FILTER>
+        )
+    }
 }
