@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+//import React, { useState, useEffect } from  'react';
 import Cards from '../Components/Cards/Cards'
 import axios from 'axios'
 
+
 export default class Page4 extends Component {
+
 
     state = {
         datas: [],
@@ -20,9 +23,10 @@ export default class Page4 extends Component {
 
     render() {
         const cards = this.state.datas.map(data =>{
+            
             return (
                 <>
-                <Cards 
+                <Cards id={data.id}
                 name={data.name}
                 street={data.street}
                 state={data.state}
@@ -30,6 +34,7 @@ export default class Page4 extends Component {
                 city={data.city}
                 brewery_type={data.brewery_type}
                 />
+                
                 </>
             )
         })

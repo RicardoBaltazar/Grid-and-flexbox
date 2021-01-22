@@ -8,7 +8,7 @@ import styled from "styled-components"
 
 let page = 2
 
-const CARDS = styled.div`
+const CARDS = styled.a`
     width: 300px;
     min-width: 300px;
     height: 320px;
@@ -16,6 +16,7 @@ const CARDS = styled.div`
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     text-decoration: inherit;
+    color: #000;
     display: flex;
     flex-direction: column;
     
@@ -100,7 +101,7 @@ export default function Cards(props){
 
             return (
                 <>
-                <CARDS>
+                <CARDS href={props.id}>
                     <div className='card-title'>
                         <p>{props.name}</p>
                     </div>
