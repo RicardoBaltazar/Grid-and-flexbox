@@ -1,17 +1,13 @@
 import React from 'react';
-import Cards from '../Components/Cards/Cards';
 import styled from "styled-components";
-//import { useParams } from "react-router-dom";
 import axios from 'axios'
-//import Filter from '../Components/Filter/Filter'
 
-let type = 'brewpub'
+import Cards from '../Components/Cards/Cards';
 
 const FILTER = styled.div`
     label {
         padding: 0px 10px 0px 30px;
     }
-
     select {
         border: 1px solid #ccc;
         font-family: "Domine", serif;
@@ -22,8 +18,7 @@ const FILTER = styled.div`
 `
 
 export default function Page1() {
-    //const { id } = useParams('micro');
-    const [ valueFilter, setValueFilter] = React.useState('')
+    const [valueFilter, setValueFilter] = React.useState('')
     const [id] = React.useState('');
     const [data, setData] = React.useState([]);
 
@@ -63,7 +58,6 @@ export default function Page1() {
                     <option id='bar' value='bar'>bar</option>
                     <option id='contract' value='contract'>contract</option>
                     <option id='proprietor' value='proprietor'>proprietor</option>
-                    {/*filter*/}
                 </select>
             </FILTER>
             <section>

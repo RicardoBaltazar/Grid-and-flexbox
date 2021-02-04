@@ -7,7 +7,6 @@ const HEADER = styled.header`
     margin-bottom: 15px;
     background-image: linear-gradient(to right, #201b1c,  #423e3d);
     color: #fff;
-    //font-family: 'Times New Roman', Times, serif;  
     h2 {
         font-size: 32px;
     }

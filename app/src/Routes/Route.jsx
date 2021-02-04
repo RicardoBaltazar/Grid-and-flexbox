@@ -9,7 +9,6 @@ import PageBreweries from '../Pages/Page_Breweries'
 
 export default function Routes() {
     return (
-
         <BrowserRouter>
             <Switch>
                 <Route exact path='/Page1' component={Page1} />
@@ -20,6 +19,5 @@ export default function Routes() {
                 <Redirect from='' to='/Page1' />
             </Switch>
         </BrowserRouter>
-
     )
 }

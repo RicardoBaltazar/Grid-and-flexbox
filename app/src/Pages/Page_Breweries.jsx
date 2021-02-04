@@ -41,36 +41,34 @@ const LINK_BACK = styled.a`
     }
 `
 
-
-
 export default function PageBreweries() {
     const { id } = useParams();
-    const [ data, setData ] = useState([]);
+    const [data, setData] = useState([]);
 
     useEffect(() => {
         axios.get(`https://api.openbrewerydb.org/breweries/${id}`)
-        .then((response) => {
-            setData(response.data)
-        })
+            .then((response) => {
+                setData(response.data)
+            })
     }, [])
 
     return (
         <>
-        <LINK_BACK href="/Page1"> <BsArrowLeft /> Back</LINK_BACK>
-        <CARD_BREWERIES>
-            <h1>{data.name}</h1>
-            <p>Type: {data.brewery_type}</p>
-            <p>Street: {data.street}</p>
-            <p>City: {data.city}</p>
-            <p>State: {data.state}</p>
-            <p>Country: {data.country}</p>
-            <p>Website: <a href={data.website_url} target='blank'>{data.website_url}</a></p>
-            <p>Phone: {data.phone}</p>
-            <p>Open in Maps: <a href={
-                `https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`} target='blank'>
-                {data.latitude},{data.longitude}
+            <LINK_BACK href="/Page1"> <BsArrowLeft /> Back</LINK_BACK>
+            <CARD_BREWERIES>
+                <h1>{data.name}</h1>
+                <p>Type: {data.brewery_type}</p>
+                <p>Street: {data.street}</p>
+                <p>City: {data.city}</p>
+                <p>State: {data.state}</p>
+                <p>Country: {data.country}</p>
+                <p>Website: <a href={data.website_url} target='blank'>{data.website_url}</a></p>
+                <p>Phone: {data.phone}</p>
+                <p>Open in Maps: <a href={
+                    `https://www.google.com/maps/search/?api=1&query=${data.latitude},${data.longitude}`} target='blank'>
+                    {data.latitude},{data.longitude}
                 </a></p>
-        </CARD_BREWERIES>
+            </CARD_BREWERIES>
         </>
     )
 }

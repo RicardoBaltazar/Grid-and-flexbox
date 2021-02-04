@@ -1,6 +1,5 @@
 import React from 'react'
 import styled from "styled-components"
-//import { Link } from 'react-router-dom'
 
 const LINK = styled.a`
     padding: 8px 12px;
@@ -17,11 +16,6 @@ const LINK = styled.a`
         background-color: #423e3d;
         transition: 0.2s;       
     }
-    /*
-  a {
-    color: #423e3d;
-    te
-    */
 `
 
 export default function Pagination(props){

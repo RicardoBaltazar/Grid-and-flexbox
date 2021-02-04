@@ -1,12 +1,5 @@
-//import React, { Component } from 'react'
 import React from 'react'
-import { Switch } from 'react-router-dom'
 import styled from "styled-components"
-//import testes from "../../services/teste"
-//import axios from 'axios'
-
-
-let page = 2
 
 const CARDS = styled.a`
     width: 300px;
@@ -46,8 +39,6 @@ const CARDS = styled.a`
         bottom: 0;
     }
 
-
-
     @media(max-width: 426px){
         width: 100%;
     }
@@ -61,14 +52,7 @@ const SPAN = styled.span`
         color: ${props => props.color};    
 `
 
-/*
-export default class Cards extends Component {
-
-    render() {
-        */
-
-export default function Cards(props){
-
+export default function Cards(props) {
     let spanFooter = <SPAN>{props.brewery_type}</SPAN>
     switch (props.brewery_type) {
         case 'micro':
@@ -93,96 +77,30 @@ export default function Cards(props){
             spanFooter = <SPAN backgroundColor='#00fbff' color='#000'>{props.brewery_type}</SPAN>
             break
         case 'proprietor':
-            spanFooter = <SPAN backgroundColor='#ee00ff' color='#fff'   >{props.brewery_type}</SPAN>
+            spanFooter = <SPAN backgroundColor='#ee00ff' color='#fff'>{props.brewery_type}</SPAN>
             break
         default:
             break;
     }
 
-            return (
-                <>
-                <CARDS href={props.id}>
-                    <div className='card-title'>
-                        <p>{props.name}</p>
-                    </div>
-                    
-                    <div className='card-text'>
-                        <p>{props.street}</p>
-                        <p>{props.state} - {props.postal_code}</p>
-                        <p>{props.city}</p>
-                    </div>
-
-                    <div className='card-footer'>
-                        {spanFooter}
-                    </div>
-                </ CARDS>
-                </>
-            )
-        
-    }
-
-    /*
-    
-    state = {
-        datas: [],
-      }
-    
-      componentDidMount() {
-        //axios.get(`https://api.openbrewerydb.org/breweries`)
-        axios.get(`https://api.openbrewerydb.org/breweries?page=1`)
-          .then(res => {
-            const datas = res.data;
-            this.setState({ datas });
-            console.log(datas)
-          })
-      }
-
-    render() {
-
-
-        const cards = this.state.datas.map(data =>{
-            return (
-                <>
-                <CARDS>
-                    <div className='card-title'>
-                        {data.name}
-                    </div>
-                    
-                    <div className='card-text'>
-                        <p>{data.street}</p>
-                        <p>{data.state} - {data.postal_code}</p>
-                        <p>{data.city}</p>
-                    </div>
-
-                    <div className='card-footer'>
-                        <span>{data.brewery_type}</span>
-                    </div>
-                </ CARDS>
-                </>
-            )
-        })
-
-        return (
-            <>
-                {cards}
-            </>
-        )
-    }
-
-    /*
-    <div className='card-title'>
-                    {testes[0].title}
-                    {cards}
+    return (
+        <>
+            <CARDS href={props.id}>
+                <div className='card-title'>
+                    <p>{props.name}</p>
                 </div>
+
                 <div className='card-text'>
-                    {testes[0].text}
-                    {cards}
+                    <p>{props.street}</p>
+                    <p>{props.state} - {props.postal_code}</p>
+                    <p>{props.city}</p>
+                </div>
 
-                </div>
                 <div className='card-footer'>
-                    {testes[0].footer}
-                    {cards}
+                    {spanFooter}
                 </div>
-                
-            }
-            */
+            </ CARDS>
+        </>
+    )
+
+}
