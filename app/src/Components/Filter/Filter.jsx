@@ -1,11 +1,8 @@
-import React, { Component } from 'react'
-import styled from "styled-components"
-import axios from 'axios'
-
-
+import React from 'react';
+import styled from "styled-components";
+import axios from 'axios';
 
 const FILTER = styled.div`
-
     label {
         padding: 0px 10px 0px 30px;
     }
@@ -18,42 +15,42 @@ const FILTER = styled.div`
         color: #4a4a4a;
     }
 `
-export default class Filter extends Component {
 
-    state = {
-        datas: [],
+export default function Filter(props) {
+    const [data, setData] = React.useState([]);
 
-    }
-
-
-    componentDidMount() {
-        //axios.get(`https://api.openbrewerydb.org/breweries`)
+    React.useEffect(() => {
         axios.get(`https://api.openbrewerydb.org/breweries`)
-            .then(res => {
-                const datas = res.data;
-                this.setState({ datas });
-                console.log(datas)
+            .then((response) => {
+                setData(response.data)
             })
-    }
+    }, [])
 
-    render() {
-
-        const filter = this.state.datas.map(data => {
-            return (
-            <option  id={data.id} value={data.brewery_type}>
+    const filter = data.map(data => {
+        return (
+            <option id={data.id} value={data.brewery_type}>
                 {data.brewery_type}
             </option>
-            )
-        })
+        )
+    })
 
-        return (
+    return (
+        <>
             <FILTER>
                 <label htmlFor="">Filter:</label>
-                <select name="" id="">
+                <select name="" id="" onChange={event => props.value(event.target.value)}>
                     <option id='0' value=''>select...</option>
-                    {filter}
+                    <option id='micro' value='micro'>micro</option>
+                    <option id='brewpub' value='brewpub'>brewpub</option>
+                    <option id='regional' value='regional'>regional</option>
+                    <option id='large' value='large'>large</option>
+                    <option id='planning' value='planning'>planning</option>
+                    <option id='bar' value='bar'>bar</option>
+                    <option id='contract' value='contract'>contract</option>
+                    <option id='proprietor' value='proprietor'>proprietor</option>
+                    {/*filter*/}
                 </select>
             </FILTER>
-        )
-    }
+        </>
+    )
 }

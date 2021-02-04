@@ -4,7 +4,6 @@ import { useParams } from "react-router-dom";
 import { BsArrowLeft } from 'react-icons/bs';
 import axios from 'axios'
 
-
 const CARD_BREWERIES = styled.div`
     min-width: 100%;
     margin: 20px 0;
@@ -45,8 +44,8 @@ const LINK_BACK = styled.a`
 
 
 export default function PageBreweries() {
-    const { id } = useParams()
-    const [ data, setData ] = useState([])
+    const { id } = useParams();
+    const [ data, setData ] = useState([]);
 
     useEffect(() => {
         axios.get(`https://api.openbrewerydb.org/breweries/${id}`)

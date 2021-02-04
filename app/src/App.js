@@ -14,10 +14,10 @@ function App() {
       <>
         <Header />
         <main>
-          <Filter />
-          <section>
             <Routes />
-          </section>
+          {/*<Filter />
+          <section>
+          </section>*/}
           <section className='section-pagination'>
           <Pagination href='/Page1' number='1'/>
           <Pagination href="/Page2" number='2'/>

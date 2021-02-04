@@ -11,16 +11,12 @@ const LINK = styled.a`
     text-decoration: none;
     color: #000;
     
-
     &:hover {
         cursor: pointer;
         color: #fff;
         background-color: #423e3d;
-        transition: 0.2s;
-
-       
+        transition: 0.2s;       
     }
-
     /*
   a {
     color: #423e3d;
