@@ -16,7 +16,22 @@ Este projeto é uma lista de cervejarias. Tem algumas funcionalidades, como list
   
 ## Começando  
   
-Este é um exemplo de como você pode dar instruções sobre como configurar seu projeto localmente. Para obter uma cópia local instalada e funcionando, siga estas etapas simples de exemplo.  
+### Pré-requisitos  
+  
+Tenha o nodeJS instalado na versão LTS [NodeJS](https://nodejs.org/en/download/)  
+  
+### Intalando  
+- Escolha um diretório e clone o repositório ```git clone https://github.com/RicardoBaltazar/Lista-de-Cervejarias```  
+- Instale pacotes NPM ```npm install```  
+  
+## Contribuindo  
+  
+As contribuições são o que torna a comunidade de código aberto um lugar incrível para aprender, inspirar e criar. Quaisquer contribuições que você fizer serão muito apreciadas.  
+1. Fork the Project  
+2. Crie o seu Branch Feature ( git checkout -b feature/contribuição)  
+3. Faça um commit ( git commit -m 'adicionar contribuição')  
+4. Faça um push ( git push origin feature/contribuição)  
+Abra uma solicitação pull  
   
 ## Licença  
   
