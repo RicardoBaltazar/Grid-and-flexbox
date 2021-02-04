@@ -20,6 +20,7 @@ Este é um exemplo de como você pode dar instruções sobre como configurar seu
   
 ## Licença  
   
+Distribuído sob a licença MIT. Veja ```LICENSE``` para mais informações
   
 ## Contato  
   
