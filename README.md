@@ -31,7 +31,7 @@ As contribuições são o que torna a comunidade de código aberto um lugar incr
 2. Crie o seu Branch Feature ( git checkout -b feature/contribuição)  
 3. Faça um commit ( git commit -m 'adicionar contribuição')  
 4. Faça um push ( git push origin feature/contribuição)  
-Abra uma solicitação pull  
+5. Abra uma solicitação pull  
   
 ## Licença  
   
